@@ -1,47 +1,158 @@
 # Frontend Project Patterns
 
-Key patterns for frontend projects based on Bridge 4 Flight Map.
+Key patterns for frontend projects based on **Bridge 4 Flight Map**.
 
-## Devcontainer Setup
+## 1. Overview
 
-Use a devcontainer for consistent development environment:
-- Node.js environment
-- VS Code with relevant extensions
-- Port forwarding for dev server
+Frontend projects following Bridge 4 patterns emphasize:
+- **Clean devcontainer setup** for environment consistency
+- **Comprehensive documentation** (architecture, deployment, development)
+- **Structured data sources** with organized API clients
+- **Maintainable code** with clear organization
 
-## Project Structure
+## 2. 🏗️ Project Structure
 
 ```
 project/
-├── .devcontainer/
+├── .devcontainer/           # Development environment
 ├── src/
-│   ├── components/
-│   ├── services/      # API clients and data services
-│   └── utils/
-├── docs/
-│   ├── architecture.md
-│   ├── deployment.md
-│   └── development.md
-└── tests/
+│   ├── components/          # UI components
+│   ├── services/            # API clients and data services
+│   ├── utils/               # Utility functions
+│   └── App.jsx              # Main application
+├── docs/                    # Required documentation
+│   ├── architecture.md      # System architecture
+│   ├── deployment.md        # Deployment process
+│   └── development.md       # Development workflow
+├── tests/                   # Test files
+└── README.md                # Project overview
 ```
 
-## Documentation Requirements
+## 3. 📚 Required Documentation
 
-**architecture.md**: Component structure, state management, data flow
-**deployment.md**: Build process, hosting, deployment steps
-**development.md**: Setup instructions, dev workflow
+### architecture.md
+**Purpose**: Document component structure, state management, and data flow
 
-## Data Source Management
+**Key sections**:
+- Component breakdown and responsibilities
+- State management approach
+- Data flow through the application
+- Technology choices and rationale
 
-Structure API integration clearly:
-- Centralized API client in `src/services/`
-- Environment variables for configuration
-- Proper error handling
-- Document endpoints in architecture docs
+### deployment.md  
+**Purpose**: Document build process and deployment steps
 
-## Key Practices
+**Key sections**:
+- Prerequisites and environment setup
+- Build commands and process
+- Deployment steps for each environment
+- Verification and rollback procedures
 
-- Start with devcontainer for environment consistency
-- Document deployment process early
-- Keep architecture docs updated
-- Use structured approach for API integration
+### development.md
+**Purpose**: Document setup and development workflow
+
+**Key sections**:
+- Getting started (prerequisites, setup)
+- Project structure explanation
+- Development workflow
+- Common tasks and commands
+
+## 4. 🔧 Devcontainer Setup
+
+Use devcontainer for consistent development environment across team:
+
+**Key features**:
+- Node.js environment (LTS version)
+- VS Code extensions for development
+- Port forwarding for dev server
+- Git configuration
+
+**Example structure**:
+```json
+{
+  "name": "Frontend Development",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:18",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "forwardPorts": [3000, 5173]
+}
+```
+
+## 5. 🔌 Data Source Management
+
+Structure API integration clearly and consistently:
+
+### Centralized API Client
+
+```javascript
+// src/services/api.js
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
+
+export const apiClient = {
+  async get(endpoint) {
+    const response = await fetch(`${API_BASE}${endpoint}`);
+    if (!response.ok) throw new Error(`API error: ${response.status}`);
+    return response.json();
+  },
+  
+  async post(endpoint, data) {
+    const response = await fetch(`${API_BASE}${endpoint}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (!response.ok) throw new Error(`API error: ${response.status}`);
+    return response.json();
+  }
+};
+```
+
+### Service Organization
+
+- **Single API client** in `src/services/api.js`
+- **Environment variables** for configuration
+- **Error handling** with clear messages
+- **Endpoint documentation** in architecture.md
+
+## 6. 🎯 Key Practices
+
+### Development Workflow
+1. **Start with devcontainer** - Ensures environment consistency
+2. **Document early** - Create docs/architecture.md at project start
+3. **Structure data access** - Keep API calls organized in services/
+4. **Update docs** - Keep architecture documentation current
+
+### Code Organization
+- **Components**: Reusable UI elements in `src/components/`
+- **Services**: Data fetching and API clients in `src/services/`
+- **Utils**: Helper functions in `src/utils/`
+- **Tests**: Mirror source structure in `tests/`
+
+### Documentation Maintenance
+- Update `docs/architecture.md` when adding major components
+- Update `docs/deployment.md` when deployment process changes  
+- Keep `docs/development.md` accurate for new team members
+
+## 7. 📋 Checklist
+
+When setting up a new frontend project:
+
+- [ ] Devcontainer configured and tested
+- [ ] Project structure matches pattern
+- [ ] API client created in `src/services/`
+- [ ] `docs/architecture.md` created and populated
+- [ ] `docs/deployment.md` created with deployment steps
+- [ ] `docs/development.md` created with setup instructions
+- [ ] Environment variables documented
+- [ ] Data source management structured
+
+## 8. 🔗 Reference
+
+- **Bridge 4 Flight Map**: Reference implementation of these patterns
+- **Templates**: Use files from `TEMPLATES/docs/` as starting point

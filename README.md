@@ -1,12 +1,49 @@
-# Gumbotron Copilot Setup
+# Gumbotron Copilot Setup: Meta-Configuration Repository
 
-This repository contains my preferred development patterns, styles, and preferences for use as a reference when starting new projects with GitHub Copilot.
+## 1. Overview
 
-## Purpose
+This repository serves as a **meta-configuration guide** for bootstrapping new projects with GitHub Copilot. It contains documented patterns, styles, and preferences from successful projects (**Bridge 4 Flight Map** and **Catalyst Weave**) to ensure consistency across all future development.
 
-This is a **meta-configuration repository** - a template of templates. When starting a new project, I'll create a repository based on this one and provide Copilot with a design document to get started.
+**🎯 For AI Assistants/Copilot**: See [COPILOT.md](COPILOT.md) for complete development guidance when working with this repository.
 
-## Key Development Preferences
+## 2. 🚀 Quick Start
+
+### **When Starting a New Project**
+
+1. **Create new repository** based on this template
+2. **Review project type** in `PROJECT_TYPES/` directory
+3. **Copy relevant templates** from `TEMPLATES/docs/`
+4. **Provide Copilot** with design document and reference this repo
+
+### **For AI Assistants**
+
+```bash
+# Read this first
+cat COPILOT.md
+
+# Then review project-specific patterns
+cat PROJECT_TYPES/[your-project-type].md
+```
+
+## 3. 🏗️ Repository Structure
+
+```
+gumbotron-copilot-setup/
+├── .github/
+│   └── copilot-instructions.md  # General coding preferences
+├── PROJECT_TYPES/               # Project-specific patterns
+│   ├── frontend.md              # Frontend development patterns
+│   └── agent-ai.md              # Agent/AI development patterns
+├── TEMPLATES/                   # Starter documentation templates
+│   └── docs/                    # Documentation templates
+│       ├── architecture-template.md
+│       ├── deployment-template.md
+│       └── development-template.md
+├── README.md                    # This file
+└── COPILOT.md                   # AI assistant guidelines
+```
+
+## 4. 📚 Key Development Preferences
 
 ### From Bridge 4 Flight Map (Frontend/Core Development)
 - Clean devcontainer setup
@@ -20,35 +57,58 @@ This is a **meta-configuration repository** - a template of templates. When star
 - Testing and validation protocols
 - Human-in-the-loop capabilities
 
-## Repository Structure
+## 5. 📁 Project Types
 
-```
-gumbotron-copilot-setup/
-├── .github/
-│   └── copilot-instructions.md  # Instructions for GitHub Copilot
-├── PROJECT_TYPES/               # Guides for different project types
-├── TEMPLATES/                   # Starter files and structures
-└── README.md                    # This file
-```
+| Project Type | Use Case | Documentation |
+|--------------|----------|---------------|
+| **Frontend** | React/Vue/modern web apps | [PROJECT_TYPES/frontend.md](PROJECT_TYPES/frontend.md) |
+| **Agent/AI** | Google ADK-based agents | [PROJECT_TYPES/agent-ai.md](PROJECT_TYPES/agent-ai.md) |
 
-## For GitHub Copilot
+## 6. 📖 Documentation Guide
 
-When working on new projects, reference:
-- `.github/copilot-instructions.md` for general coding preferences
-- `PROJECT_TYPES/` for project-specific patterns
-- `TEMPLATES/` for starter file structures
+| Document | Purpose | Audience |
+|----------|---------|----------|
+| **[README.md](README.md)** | Repository overview | All users |
+| **[COPILOT.md](COPILOT.md)** | AI assistant guidelines | Copilot, AI assistants |
+| **[PROJECT_TYPES/](PROJECT_TYPES/)** | Project-specific patterns | Developers starting new projects |
+| **[TEMPLATES/](TEMPLATES/)** | Starter documentation | All project types |
 
-## Contributing Patterns
+## 7. 🎯 Philosophy
 
-When adding new patterns:
-1. Keep documentation minimal and focused on KEY preferences
-2. Avoid overly specific technology choices unless they're essential
-3. Document the "why" behind choices
-4. Provide examples that can be adapted
+This meta-configuration approach recognizes that:
 
-## Philosophy
+- **Consistency matters** - Similar projects should follow similar patterns
+- **Patterns over specifics** - Document the approach, not every implementation detail
+- **Documentation as code** - Treat these guides as living references
+- **AI-assisted development** - Optimized for Copilot understanding and application
 
-- **Consistency over completeness** - Document what matters
-- **Patterns over specifics** - Show the approach, not every detail
-- **Documentation as reference** - Living guide for preferences
-- **AI-assisted development** - Optimized for Copilot understanding
+## 8. 🤝 Contributing Patterns
+
+When adding new patterns to this repository:
+
+1. **Keep documentation minimal** - Focus on KEY preferences only
+2. **Avoid technology specifics** - Unless essential or proven in reference projects
+3. **Document the "why"** - Explain reasoning behind choices
+4. **Provide adaptable examples** - Not prescriptive implementations
+5. **Update cross-references** - Keep documentation links current
+
+## 9. 📋 Usage Workflow
+
+### For New Projects
+
+1. **Identify project type** from `PROJECT_TYPES/`
+2. **Review relevant patterns** and best practices
+3. **Copy template files** from `TEMPLATES/docs/`
+4. **Customize templates** with project-specific details
+5. **Reference this repo** when providing design docs to Copilot
+
+### For AI Assistants
+
+1. **Read [COPILOT.md](COPILOT.md)** for complete development guidelines
+2. **Follow documented patterns** from reference projects
+3. **Apply minimal changes** - Only what's necessary
+4. **Maintain consistency** with established patterns
+
+---
+
+**🎯 Ready to start?** Choose your project type from `PROJECT_TYPES/` and reference the appropriate patterns and templates.
