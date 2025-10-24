@@ -34,6 +34,12 @@ gumbotron-copilot-setup/
 ├── PROJECT_TYPES/               # Project-specific patterns
 │   ├── frontend.md              # Frontend development patterns
 │   └── agent-ai.md              # Agent/AI development patterns
+├── REFERENCE_LIBRARY/           # Curated framework documentation
+│   ├── README.md                # Reference library index
+│   ├── agent-frameworks/        # AI/Agent framework docs
+│   │   ├── adk-llms.txt        # Google ADK concise reference
+│   │   └── adk-llms-full.txt   # Google ADK complete docs
+│   └── frontend-frameworks/     # Frontend framework references
 ├── TEMPLATES/                   # Starter documentation templates
 │   └── docs/                    # Documentation templates
 │       ├── architecture-template.md
@@ -70,6 +76,7 @@ gumbotron-copilot-setup/
 |----------|---------|----------|
 | **[README.md](README.md)** | Repository overview | All users |
 | **[COPILOT.md](COPILOT.md)** | AI assistant guidelines | Copilot, AI assistants |
+| **[REFERENCE_LIBRARY/](REFERENCE_LIBRARY/)** | Framework docs and references | All users |
 | **[PROJECT_TYPES/](PROJECT_TYPES/)** | Project-specific patterns | Developers starting new projects |
 | **[TEMPLATES/](TEMPLATES/)** | Starter documentation | All project types |
 
@@ -97,17 +104,19 @@ When adding new patterns to this repository:
 ### For New Projects
 
 1. **Identify project type** from `PROJECT_TYPES/`
-2. **Review relevant patterns** and best practices
-3. **Copy template files** from `TEMPLATES/docs/`
-4. **Customize templates** with project-specific details
-5. **Reference this repo** when providing design docs to Copilot
+2. **Review reference library** at `REFERENCE_LIBRARY/` for relevant docs
+3. **Review relevant patterns** and best practices
+4. **Copy template files** from `TEMPLATES/docs/`
+5. **Customize templates** with project-specific details
+6. **Reference this repo** when providing design docs to Copilot
 
 ### For AI Assistants
 
 1. **Read [COPILOT.md](COPILOT.md)** for complete development guidelines
-2. **Follow documented patterns** from reference projects
-3. **Apply minimal changes** - Only what's necessary
-4. **Maintain consistency** with established patterns
+2. **Consult [REFERENCE_LIBRARY/](REFERENCE_LIBRARY/)** for framework-specific docs
+3. **Follow documented patterns** from reference projects
+4. **Apply minimal changes** - Only what's necessary
+5. **Maintain consistency** with established patterns
 
 ---
 

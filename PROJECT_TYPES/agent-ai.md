@@ -205,5 +205,6 @@ When setting up a new agent/AI project:
 ## 9. 🔗 Reference
 
 - **Google ADK**: https://google.github.io/adk-docs/
-- **Catalyst Weave**: Reference implementation of these patterns
+- **ADK Documentation**: See `REFERENCE_LIBRARY/agent-frameworks/` for llms.txt files
+- **Catalyst Weave**: Reference implementation (see REFERENCE_LIBRARY for details)
 - **Templates**: Use files from `TEMPLATES/docs/` as starting point

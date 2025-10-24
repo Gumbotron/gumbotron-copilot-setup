@@ -7,6 +7,7 @@ This document provides guidelines for AI assistants and code copilots working wi
 | Task | Resource |
 |------|----------|
 | **Project Overview** | [README.md](README.md) |
+| **Reference Library** | [REFERENCE_LIBRARY/](REFERENCE_LIBRARY/) |
 | **Frontend Patterns** | [PROJECT_TYPES/frontend.md](PROJECT_TYPES/frontend.md) |
 | **Agent/AI Patterns** | [PROJECT_TYPES/agent-ai.md](PROJECT_TYPES/agent-ai.md) |
 | **Documentation Templates** | [TEMPLATES/docs/](TEMPLATES/docs/) |
@@ -24,12 +25,17 @@ Your primary objective is to assist developers in building projects following es
 
 ## 📚 Essential Resources
 
-### 1. General Coding Preferences
+### 1. Reference Library
+**Directory**: [REFERENCE_LIBRARY/](REFERENCE_LIBRARY/)
+- **Contains**: Curated framework documentation (ADK llms.txt files, reference projects)
+- **When to use**: Starting any new project to find relevant docs and patterns
+
+### 2. General Coding Preferences
 **File**: [.github/copilot-instructions.md](.github/copilot-instructions.md)
 - **Contains**: General coding standards, code quality expectations
 - **When to use**: For all code generation and review tasks
 
-### 2. Project-Specific Patterns
+### 3. Project-Specific Patterns
 - **Frontend**: [PROJECT_TYPES/frontend.md](PROJECT_TYPES/frontend.md)
   - Devcontainer setup
   - Project structure
@@ -42,7 +48,7 @@ Your primary objective is to assist developers in building projects following es
   - Human-in-the-loop patterns
   - Documentation requirements
 
-### 3. Documentation Templates
+### 4. Documentation Templates
 **Directory**: [TEMPLATES/docs/](TEMPLATES/docs/)
 - **architecture-template.md**: System architecture documentation
 - **deployment-template.md**: Deployment process documentation
@@ -106,13 +112,15 @@ Before beginning any task:
 
 ### 1. Identify Context
 - Understand project type (frontend, agent/AI, or other)
+- Check **REFERENCE_LIBRARY/** for relevant framework docs
 - Identify specific patterns to follow
-- Check reference documentation
+- Review reference documentation
 
 ### 2. Reference Documentation
 - For frontend: Check [PROJECT_TYPES/frontend.md](PROJECT_TYPES/frontend.md)
-- For agents: Check [PROJECT_TYPES/agent-ai.md](PROJECT_TYPES/agent-ai.md)
+- For agents: Check [PROJECT_TYPES/agent-ai.md](PROJECT_TYPES/agent-ai.md) and `REFERENCE_LIBRARY/agent-frameworks/adk-llms.txt`
 - For code standards: Check [.github/copilot-instructions.md](.github/copilot-instructions.md)
+- For examples: Review reference projects in REFERENCE_LIBRARY
 
 ### 3. Follow Patterns
 - Apply minimal necessary changes
@@ -130,24 +138,27 @@ Before beginning any task:
 
 ### Starting a New Frontend Project
 
-1. **Setup devcontainer** based on patterns
-2. **Create project structure** following frontend.md
-3. **Initialize documentation** from templates:
+1. **Review reference library**: Check `REFERENCE_LIBRARY/README.md` for React/Vue resources
+2. **Setup devcontainer** based on patterns
+3. **Create project structure** following frontend.md
+4. **Initialize documentation** from templates:
    ```bash
    cp TEMPLATES/docs/architecture-template.md docs/architecture.md
    cp TEMPLATES/docs/deployment-template.md docs/deployment.md
    cp TEMPLATES/docs/development-template.md docs/development.md
    ```
-4. **Customize templates** with project-specific information
-5. **Implement data services** in `src/services/`
+5. **Customize templates** with project-specific information
+6. **Implement data services** in `src/services/`
 
 ### Starting a New Agent/AI Project
 
-1. **Setup ADK environment** following patterns
-2. **Create agent structure** following agent-ai.md
-3. **Initialize documentation** from templates
-4. **Implement test protocols** for validation
-5. **Build HITL capabilities** as needed
+1. **Review ADK documentation**: Read `REFERENCE_LIBRARY/agent-frameworks/adk-llms.txt`
+2. **Reference Catalyst Weave**: Check patterns in REFERENCE_LIBRARY
+3. **Setup ADK environment** following patterns
+4. **Create agent structure** following agent-ai.md
+5. **Initialize documentation** from templates
+6. **Implement test protocols** for validation
+7. **Build HITL capabilities** as needed
 
 ### Adding Documentation
 

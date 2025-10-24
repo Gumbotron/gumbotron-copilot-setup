@@ -152,7 +152,8 @@ When setting up a new frontend project:
 - [ ] Environment variables documented
 - [ ] Data source management structured
 
-## 8. 🔗 Reference
+## 9. 🔗 Reference
 
 - **Bridge 4 Flight Map**: Reference implementation of these patterns
+- **REFERENCE_LIBRARY**: See `REFERENCE_LIBRARY/README.md` for React/Vue docs and resources
 - **Templates**: Use files from `TEMPLATES/docs/` as starting point
