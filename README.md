@@ -1,123 +1,76 @@
-# Gumbotron Copilot Setup: Meta-Configuration Repository
+# Gumbotron Copilot Setup
 
-## 1. Overview
+Meta-configuration repository for bootstrapping new projects with consistent patterns.
 
-This repository serves as a **meta-configuration guide** for bootstrapping new projects with GitHub Copilot. It contains documented patterns, styles, and preferences from successful projects (**Bridge 4 Flight Map** and **Catalyst Weave**) to ensure consistency across all future development.
+## Quick Start
 
-**🎯 For AI Assistants/Copilot**: See [COPILOT.md](COPILOT.md) for complete development guidance when working with this repository.
+1. **Create new repo** based on this template
+2. **Review project list** to see tech stack examples
+3. **Copy documentation templates** from `TEMPLATES/`
+4. **Setup devcontainer** appropriate for tech stack
+5. **Provide design doc** to Copilot referencing this repo
 
-## 2. 🚀 Quick Start
+## Current Projects
 
-### **When Starting a New Project**
+| Project | Type | Tech Stack | Key Patterns |
+|---------|------|------------|--------------|
+| **[Catalyst Weave](https://github.com/Gumbotron/catalyst-weave)** | Agent/AI | Python, Google ADK, Gemini | Multi-agent, HITL, AGENTS.md, SETUP.md |
+| **[Bridge 4 Flight Map](https://github.com/Gumbotron/bridge-4-flight-map)** | Frontend | React, TypeScript, Vite | Devcontainer, docs/, services/ pattern |
 
-1. **Create new repository** based on this template
-2. **Review project type** in `PROJECT_TYPES/` directory
-3. **Copy relevant templates** from `TEMPLATES/docs/`
-4. **Provide Copilot** with design document and reference this repo
+## Key Preferences
 
-### **For AI Assistants**
+### Documentation
+- Structured docs (SETUP.md, AGENTS.md or similar for AI projects)
+- Architecture, deployment, and development docs in `docs/`
+- Minimal, focused documentation - KEY patterns only
 
-```bash
-# Read this first
-cat COPILOT.md
+### Project Organization
+- **Frontend**: `src/components/`, `src/services/` (API clients), `src/utils/`
+- **Agent/AI**: `agents/`, `workflows/`, `protocols/`, `human_loop/`
+- **Docs**: Always include `docs/architecture.md`, `docs/deployment.md`, `docs/development.md`
 
-# Then review project-specific patterns
-cat PROJECT_TYPES/[your-project-type].md
-```
+### Development Environment
+- Use devcontainers for consistency
+- Environment variables in `.env` (never commit)
+- Project-specific VS Code extensions
 
-## 3. 🏗️ Repository Structure
+### Agent/AI Specific
+- Follow [Google ADK](https://google.github.io/adk-docs/) patterns
+- Document agent capabilities and limitations
+- Implement testing protocols and HITL
 
-```
-gumbotron-copilot-setup/
-├── .github/
-│   └── copilot-instructions.md  # General coding preferences
-├── PROJECT_TYPES/               # Project-specific patterns
-│   ├── frontend.md              # Frontend development patterns
-│   └── agent-ai.md              # Agent/AI development patterns
-├── REFERENCE_LIBRARY/           # Curated framework documentation
-│   ├── README.md                # Reference library index
-│   ├── agent-frameworks/        # AI/Agent framework docs
-│   │   ├── adk-llms.txt        # Google ADK concise reference
-│   │   └── adk-llms-full.txt   # Google ADK complete docs
-│   └── frontend-frameworks/     # Frontend framework references
-├── TEMPLATES/                   # Starter documentation templates
-│   └── docs/                    # Documentation templates
-│       ├── architecture-template.md
-│       ├── deployment-template.md
-│       └── development-template.md
-├── README.md                    # This file
-└── COPILOT.md                   # AI assistant guidelines
-```
+## Repository Setup Steps
 
-## 4. 📚 Key Development Preferences
+1. **Create documentation structure**:
+   ```bash
+   mkdir -p docs
+   cp TEMPLATES/docs/* docs/
+   ```
 
-### From Bridge 4 Flight Map (Frontend/Core Development)
-- Clean devcontainer setup
-- Comprehensive deployment documentation
-- Clear architecture documentation
-- Structured data source management
+2. **Setup devcontainer**:
+   - Copy `.devcontainer/` from reference project
+   - Adjust for specific tech stack
+   - Configure VS Code extensions
 
-### From Catalyst Weave (Agent/AI Development)
-- [Google ADK](https://google.github.io/adk-docs/)-based agent architecture
-- Development workflow organization
-- Testing and validation protocols
-- Human-in-the-loop capabilities
+3. **Create .env.example**:
+   - List all required environment variables
+   - Document what each variable does
+   - Never commit actual `.env`
 
-## 5. 📁 Project Types
+4. **Setup project structure**:
+   - Follow patterns from reference projects above
+   - Keep organization consistent with project type
 
-| Project Type | Use Case | Documentation |
-|--------------|----------|---------------|
-| **Frontend** | React/Vue/modern web apps | [PROJECT_TYPES/frontend.md](PROJECT_TYPES/frontend.md) |
-| **Agent/AI** | Google ADK-based agents | [PROJECT_TYPES/agent-ai.md](PROJECT_TYPES/agent-ai.md) |
+5. **Create Copilot instructions**:
+   - Add `.github/copilot-instructions.md`
+   - Reference this repo and project preferences
+   - Link to framework-specific docs as needed
 
-## 6. 📖 Documentation Guide
+## For AI Assistants
 
-| Document | Purpose | Audience |
-|----------|---------|----------|
-| **[README.md](README.md)** | Repository overview | All users |
-| **[COPILOT.md](COPILOT.md)** | AI assistant guidelines | Copilot, AI assistants |
-| **[REFERENCE_LIBRARY/](REFERENCE_LIBRARY/)** | Framework docs and references | All users |
-| **[PROJECT_TYPES/](PROJECT_TYPES/)** | Project-specific patterns | Developers starting new projects |
-| **[TEMPLATES/](TEMPLATES/)** | Starter documentation | All project types |
+See [COPILOT.md](COPILOT.md) for development guidelines.
 
-## 7. 🎯 Philosophy
-
-This meta-configuration approach recognizes that:
-
-- **Consistency matters** - Similar projects should follow similar patterns
-- **Patterns over specifics** - Document the approach, not every implementation detail
-- **Documentation as code** - Treat these guides as living references
-- **AI-assisted development** - Optimized for Copilot understanding and application
-
-## 8. 🤝 Contributing Patterns
-
-When adding new patterns to this repository:
-
-1. **Keep documentation minimal** - Focus on KEY preferences only
-2. **Avoid technology specifics** - Unless essential or proven in reference projects
-3. **Document the "why"** - Explain reasoning behind choices
-4. **Provide adaptable examples** - Not prescriptive implementations
-5. **Update cross-references** - Keep documentation links current
-
-## 9. 📋 Usage Workflow
-
-### For New Projects
-
-1. **Identify project type** from `PROJECT_TYPES/`
-2. **Review reference library** at `REFERENCE_LIBRARY/` for relevant docs
-3. **Review relevant patterns** and best practices
-4. **Copy template files** from `TEMPLATES/docs/`
-5. **Customize templates** with project-specific details
-6. **Reference this repo** when providing design docs to Copilot
-
-### For AI Assistants
-
-1. **Read [COPILOT.md](COPILOT.md)** for complete development guidelines
-2. **Consult [REFERENCE_LIBRARY/](REFERENCE_LIBRARY/)** for framework-specific docs
-3. **Follow documented patterns** from reference projects
-4. **Apply minimal changes** - Only what's necessary
-5. **Maintain consistency** with established patterns
-
----
-
-**🎯 Ready to start?** Choose your project type from `PROJECT_TYPES/` and reference the appropriate patterns and templates.
+**Key Resources**:
+- Google ADK: [llms.txt](https://github.com/google/adk-python/blob/main/llms.txt) | [llms-full.txt](https://github.com/google/adk-python/blob/main/llms-full.txt)
+- Catalyst Weave patterns: [AGENTS.md](https://github.com/Gumbotron/catalyst-weave/blob/main/AGENTS.md)
+- Reference this repo when starting projects
