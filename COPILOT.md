@@ -13,22 +13,33 @@ Quick reference for AI assistants working on Gumbotron projects. This repository
 
 ## 🚀 Starting a New Project
 
+**Step 1: Explore Relevant Resources**
+
+Before starting, review repositories and documentation that match your project type:
+
+- **Agent/AI Projects**: Review [Catalyst Weave](https://github.com/Gumbotron/catalyst-weave) structure and [Google ADK docs](https://google.github.io/adk-docs/)
+- **Frontend Projects**: Review [Bridge 4 Flight Map](https://github.com/Gumbotron/bridge-4-flight-map) and framework docs
+- **All Projects**: Check [GitHub Copilot Best Practices](https://gh.io/copilot-coding-agent-tips)
+
+**Step 2: Setup Project Structure**
+
 **For Agent/AI Projects (Catalyst Weave pattern):**
 
 1. **ALWAYS reference Catalyst Weave structure first**
-2. **Copy root documentation pattern**: README.md, AGENTS.md, SETUP.md
-3. **Reference ADK documentation**: [docs/Agent_Development_Kit_LLM_Instructions.txt](https://github.com/Gumbotron/catalyst-weave/blob/main/docs/Agent_Development_Kit_LLM_Instructions.txt)
-4. **Use `.env.template`** (not .env.example) - see [Catalyst Weave pattern](https://github.com/Gumbotron/catalyst-weave/blob/main/.env.template)
-5. **Create helper scripts** in `scripts/` directory (setup, test, run)
-6. **Structure backend code**: main_agent/, sub_agents/, agent_workflows/, tools/
+2. **Copy root documentation pattern**: README.md, AGENTS.md (for AI), SETUP.md (if complex)
+3. **Download framework documentation**: Copy [ADK llms.txt](https://github.com/google/adk-python/blob/main/docs/Agent_Development_Kit_LLM_Instructions.txt) to docs/ for Agent/AI projects
+4. **Use appropriate env file**: `.env.template` for Agent/AI, `.env.example` for Frontend
+5. **Create helper scripts** in `scripts/` directory (setup, test, dev, build)
+6. **Structure code**: Follow reference project patterns (main_agent/sub_agents for AI, src/ for Frontend)
 
 **For Frontend Projects (Bridge 4 pattern):**
 
-1. **Reference Bridge 4 structure**
+1. **Reference Bridge 4 structure** and modern frontend best practices
 2. **Create standard docs/**: architecture.md, deployment.md, development.md
-3. **Use `.env.example`** for environment variables
-4. **Structure source**: src/components/, src/services/, src/utils/
-5. **Setup devcontainer** with frontend tools
+3. **Use `.env.example`** for environment variables (frontend convention)
+4. **Create helper scripts** in `scripts/` directory (setup, test, dev, build, deploy)
+5. **Structure source**: src/components/, src/services/, src/utils/
+6. **Setup devcontainer** with frontend tools (Node.js, TypeScript, etc.)
 
 ## 📁 Required File Structure
 
@@ -74,6 +85,11 @@ project-name/
 │   ├── architecture.md
 │   ├── deployment.md
 │   └── development.md
+├── scripts/
+│   ├── setup.sh
+│   ├── test.sh
+│   ├── dev.sh
+│   └── build.sh
 ├── src/
 │   ├── components/
 │   ├── services/
@@ -108,18 +124,30 @@ project-name/
 5. **Troubleshooting section** - Common issues and solutions
 6. **Essential Workflow** - Step-by-step development process
 
-### Helper Scripts (Agent/AI projects)
-Create in `scripts/` directory:
-- `adk-setup.sh` - Complete environment setup and validation
-- `test-agents.sh` - Test all agents load correctly
-- `start-adk-web.sh` - Launch web interface with environment
-- `demo.sh` - Interactive demo launcher (optional)
+### Helper Scripts
+Create in `scripts/` directory for all project types:
+
+**Common Scripts (All Projects):**
+- `setup.sh` - Environment setup and dependency installation
+- `test.sh` - Run test suite with appropriate configuration
+- `dev.sh` - Start development server with hot reload
+- `build.sh` - Build for production
+
+**Agent/AI Projects (Additional):**
+- `adk-setup.sh` - ADK-specific environment configuration
+- `test-agents.sh` - Validate agent loading and tools
+- `start-adk-web.sh` - Launch ADK web interface
+
+**Frontend Projects (Additional):**
+- `deploy.sh` - Deploy to hosting platform
+- `analyze.sh` - Analyze bundle size
 
 **Each script should:**
 - Include clear comments explaining what it does
 - Handle errors gracefully
 - Provide informative output
 - Work from repository root
+- Support both local and cloud environments
 
 ## 🎯 Agent/AI Specific Guidance
 

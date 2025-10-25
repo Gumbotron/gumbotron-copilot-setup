@@ -60,7 +60,10 @@ Root Level:
 ├── scripts/
 │   ├── adk-setup.sh            # ✅ Complete environment setup
 │   ├── test-agents.sh          # ✅ Validation tests
-│   └── start-adk-web.sh        # ✅ Launch web interface
+│   ├── start-adk-web.sh        # ✅ Launch web interface
+│   ├── setup.sh                # ✅ General setup
+│   ├── test.sh                 # ✅ Run tests
+│   └── dev.sh                  # ✅ Development server
 └── backend-name/
     ├── main_agent/             # Orchestrator (Alfred)
     ├── sub_agents/            # Specialists (Johnsons)
@@ -83,6 +86,12 @@ Root Level:
 │   ├── architecture.md          # ✅ System design
 │   ├── deployment.md            # ✅ Build and deploy
 │   └── development.md           # ✅ Setup and workflow
+├── scripts/
+│   ├── setup.sh                # ✅ Environment setup
+│   ├── test.sh                 # ✅ Run tests
+│   ├── dev.sh                  # ✅ Development server
+│   ├── build.sh                # ✅ Production build
+│   └── deploy.sh               # ✅ Deploy to hosting
 └── src/
     ├── components/              # React/Vue components
     ├── services/                # API clients
@@ -136,22 +145,30 @@ Cross-reference to [Related Doc](link)
 2. `.env` file in project directory
 3. Request from user as last resort
 
-### Helper Scripts (Agent/AI Projects)
+### Helper Scripts
 
-Create in `scripts/` directory following Catalyst Weave pattern:
+Create in `scripts/` directory for automation and consistency:
 
-**Required Scripts:**
+**Common Scripts (All Projects):**
 ```bash
 scripts/
-├── adk-setup.sh       # Complete setup: venv, dependencies, validation
-├── test-agents.sh     # Test all agents load and tools work
-└── start-adk-web.sh   # Launch ADK web interface with environment
+├── setup.sh       # Environment setup and dependency installation
+├── test.sh        # Run test suite
+├── dev.sh         # Start development server
+└── build.sh       # Build for production
 ```
 
-**Optional Scripts:**
+**Agent/AI Projects (Additional):**
 ```bash
-├── demo.sh            # Interactive demo launcher
-└── repo_stats.py      # Repository statistics (optional)
+├── adk-setup.sh       # ADK-specific setup
+├── test-agents.sh     # Validate agents
+└── start-adk-web.sh   # Launch ADK web interface
+```
+
+**Frontend Projects (Additional):**
+```bash
+├── deploy.sh      # Deploy to hosting
+└── analyze.sh     # Bundle analysis
 ```
 
 **Script Guidelines:**
@@ -224,9 +241,9 @@ When creating a new project based on this template:
    - Frontend: `.env.example`
 6. **Create `.github/copilot-instructions.md`** referencing primary docs
 7. **Create docs/ directory**:
-   - Agent/AI: Copy ADK docs, create AGENT_WORKFLOWS.md
+   - Agent/AI: Copy [ADK llms.txt](https://github.com/google/adk-python/blob/main/docs/Agent_Development_Kit_LLM_Instructions.txt), create AGENT_WORKFLOWS.md
    - Frontend: Create architecture.md, deployment.md, development.md
-8. **Create helper scripts** (Agent/AI projects only)
+8. **Create helper scripts** in `scripts/` (setup, test, dev, build + project-specific)
 9. **Setup code structure** following reference project patterns
 10. **Document as you build** - keep all docs synchronized
 
