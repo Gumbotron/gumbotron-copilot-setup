@@ -6,14 +6,25 @@ Quick reference for AI assistants working on Gumbotron projects. This repository
 
 | Resource | Purpose | Link |
 |----------|---------|------|
+| **README.md** | Repository setup checklist | [README.md](README.md) |
+| **TEMPLATES/** | Template files to copy | [TEMPLATES/README.md](TEMPLATES/README.md) |
 | **Google ADK Docs** | Agent/AI development | [llms.txt](https://github.com/google/adk-python/blob/main/llms.txt) \| [llms-full.txt](https://github.com/google/adk-python/blob/main/llms-full.txt) \| [Official Docs](https://google.github.io/adk-docs/) |
 | **Catalyst Weave** | Agent/AI project structure | [AGENTS.md](https://github.com/Gumbotron/catalyst-weave/blob/main/AGENTS.md) \| [SETUP.md](https://github.com/Gumbotron/catalyst-weave/blob/main/SETUP.md) \| [Repo](https://github.com/Gumbotron/catalyst-weave) |
 | **Bridge 4 Flight Map** | Frontend project structure | [Repo](https://github.com/Gumbotron/bridge-4-flight-map) |
-| **Documentation Templates** | Starter templates | [TEMPLATES/docs/](TEMPLATES/docs/) |
 
 ## 🚀 Starting a New Project
 
-**Step 1: Explore Relevant Resources**
+**Step 1: Review Templates**
+
+This repository provides ready-to-use templates in the [TEMPLATES/](TEMPLATES/) directory:
+- Configuration files (`.env`, `.gitignore`, `devcontainer.json`)
+- Documentation templates (`architecture.md`, `deployment.md`, etc.)
+- Helper scripts (`setup.sh`, `test.sh`, `dev.sh`, etc.)
+- Copilot instructions templates
+
+See [TEMPLATES/README.md](TEMPLATES/README.md) for detailed copy instructions.
+
+**Step 2: Choose Reference Project**
 
 Before starting, review repositories and documentation that match your project type:
 
@@ -21,25 +32,36 @@ Before starting, review repositories and documentation that match your project t
 - **Frontend Projects**: Review [Bridge 4 Flight Map](https://github.com/Gumbotron/bridge-4-flight-map) and framework docs
 - **All Projects**: Check [GitHub Copilot Best Practices](https://gh.io/copilot-coding-agent-tips)
 
-**Step 2: Setup Project Structure**
+**Step 3: Follow Setup Checklist**
+
+Follow the [Repository Setup Checklist](README.md#repository-setup-checklist) in README.md:
+
+1. Copy base templates from TEMPLATES/
+2. Create root documentation (README.md, etc.)
+3. Configure environment (.env.example or .env.template)
+4. Setup devcontainer
+5. Create helper scripts
+6. Create GitHub configuration (.github/copilot-instructions.md)
+7. Setup documentation directory (docs/)
+8. Initialize project code (npm create vite, etc.)
+
+**Key Differences:**
 
 **For Agent/AI Projects (Catalyst Weave pattern):**
 
-1. **ALWAYS reference Catalyst Weave structure first**
-2. **Copy root documentation pattern**: README.md, AGENTS.md (for AI), SETUP.md (if complex)
-3. **Download framework documentation**: Copy [ADK llms.txt](https://github.com/google/adk-python/blob/main/docs/Agent_Development_Kit_LLM_Instructions.txt) to docs/ for Agent/AI projects
-4. **Use appropriate env file**: `.env.template` for Agent/AI, `.env.example` for Frontend
-5. **Create helper scripts** in `scripts/` directory (setup, test, dev, build)
-6. **Structure code**: Follow reference project patterns (main_agent/sub_agents for AI, src/ for Frontend)
+1. **Use `.env.template`** for environment variables (not .env.example)
+2. **Create AGENTS.md and SETUP.md** for documentation
+3. **Copy ADK llms.txt** to docs/ directory
+4. **Use Agent/AI scripts**: setup.sh, test-agents.sh, start-adk-web.sh
+5. **Follow Alfred/Johnson paradigm**: main_agent/ + sub_agents/
 
 **For Frontend Projects (Bridge 4 pattern):**
 
-1. **Reference Bridge 4 structure** and modern frontend best practices
-2. **Create standard docs/**: architecture.md, deployment.md, development.md
-3. **Use `.env.example`** for environment variables (frontend convention)
-4. **Create helper scripts** in `scripts/` directory (setup, test, dev, build, deploy)
-5. **Structure source**: src/components/, src/services/, src/utils/
-6. **Setup devcontainer** with frontend tools (Node.js, TypeScript, etc.)
+1. **Use `.env.example`** for environment variables (standard convention)
+2. **README.md only** for root docs (no AGENTS.md or SETUP.md)
+3. **Use docs templates**: architecture.md, deployment.md, development.md
+4. **Use frontend scripts**: setup.sh, test.sh, dev.sh, build.sh
+5. **Initialize with scaffolding tool**: npm create vite, create-react-app, etc.
 
 ## 📁 Required File Structure
 
