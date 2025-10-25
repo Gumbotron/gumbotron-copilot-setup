@@ -66,6 +66,12 @@ Meta-configuration repository for bootstrapping new projects with consistent pat
    - Reference this repo and project preferences
    - Link to framework-specific docs as needed
 
+6. **Setup CI/CD** (if applicable):
+   - Add linting configuration
+   - Setup test automation
+   - Configure branch protections
+   - Enable required reviews on PRs
+
 ## For AI Assistants
 
 See [COPILOT.md](COPILOT.md) for development guidelines.
